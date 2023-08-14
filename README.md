@@ -1,4 +1,4 @@
-## Longest Common Subsequence (LCS) Finder
+## Memoization Program in C++
 
 This C++ program finds the Longest Common Subsequence (LCS) of two input strings using dynamic programming with memoization. The LCS problem is a classic algorithmic problem in computer science.
 
