@@ -1,5 +1,5 @@
 #include <iostream>
-#include <algorithm>  // Include the algorithm library for sorting
+#include <algorithm>    // Include the algorithm library for sorting
 #include <unordered_map> // Include the unordered_map library for memoization
 
 // Define a memoization map to store computed results
@@ -47,7 +47,7 @@ int main() {
     int size = sizeof(arr) / sizeof(arr[0]);
 
     // Perform sorting with memoization
-    sortAndPrint(arr, size, true); // Ascending order
+    sortAndPrint(arr, size, true);  // Ascending order
     sortAndPrint(arr, size, false); // Descending order
 
     return 0;
