@@ -29,6 +29,35 @@ std::string longestCommonSubsequence(const std::string& str1, const std::string&
     return memo[{i, j}];
 }
 
+// Function to get the length of the computed LCS
+int getLcsLength(const std::string& lcs) {
+    return lcs.length();
+}
+
+// Function to reverse the LCS string
+std::string reverseLcs(const std::string& lcs) {
+    std::string reversedLCS = lcs;
+    std::reverse(reversedLCS.begin(), reversedLCS.end());
+    return reversedLCS;
+}
+
+// Function to count the number of occurrences of a character in LCS
+int countCharacterInLcs(const std::string& lcs, char character) {
+    return std::count(lcs.begin(), lcs.end(), character);
+}
+
+// Function to convert LCS to uppercase
+std::string uppercaseLcs(const std::string& lcs) {
+    std::string uppercaseLCS = lcs;
+    std::transform(uppercaseLCS.begin(), uppercaseLCS.end(), uppercaseLCS.begin(), ::toupper);
+    return uppercaseLCS;
+}
+
+// Function to concatenate strings with LCS in between
+std::string concatenateWithLcs(const std::string& str1, const std::string& str2, const std::string& lcs) {
+    return str1 + " - " + lcs + " - " + str2;
+}
+
 int main()
 {
     std::string str1, str2;
@@ -44,26 +73,19 @@ int main()
 
     // Additional functions
 
-    // 1. Get the length of the computed LCS
-    int lcsLength = lcs.length();
+    int lcsLength = getLcsLength(lcs);
     std::cout << "Length of LCS: " << lcsLength << std::endl;
 
-    // 2. Reverse the LCS string
-    std::string reversedLCS = lcs;
-    std::reverse(reversedLCS.begin(), reversedLCS.end());
+    std::string reversedLCS = reverseLcs(lcs);
     std::cout << "Reversed LCS: " << reversedLCS << std::endl;
 
-    // 3. Count the number of 'A's in the LCS
-    int countA = std::count(lcs.begin(), lcs.end(), 'A');
+    int countA = countCharacterInLcs(lcs, 'A');
     std::cout << "Count of 'A's in LCS: " << countA << std::endl;
 
-    // 4. Convert LCS to uppercase
-    std::string uppercaseLCS = lcs;
-    std::transform(uppercaseLCS.begin(), uppercaseLCS.end(), uppercaseLCS.begin(), ::toupper);
+    std::string uppercaseLCS = uppercaseLcs(lcs);
     std::cout << "Uppercase LCS: " << uppercaseLCS << std::endl;
 
-    // 5. Concatenate the two input strings with the LCS in between
-    std::string concatenated = str1 + " - " + lcs + " - " + str2;
+    std::string concatenated = concatenateWithLcs(str1, str2, lcs);
     std::cout << "Concatenated string: " << concatenated << std::endl;
 
     return 0;
