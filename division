@@ -2,8 +2,7 @@
 #include <cmath>
 #include <unordered_map>
 
-class Factorial
-{
+class Factorial {
 private:
     static std::unordered_map<int, double> Memoization;
 
